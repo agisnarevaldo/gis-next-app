@@ -1,0 +1,37 @@
+.container {
+  border: 1px solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  border: 1px solid blue;
+}
+
+.calc-screen {
+  background-color: crimson;
+  width: 100%;
+  text-align: right;
+  color: var(--dark-text, #FFF);
+  text-align: right;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 96px; /* 100% */
+}
+
+button {
+  padding: 12px;
+  border-radius: 24px;
+  background: var(--dark-button-medium-emphasis, #4E505F);
+  width: 72px;
+  height: 72px;
+}
