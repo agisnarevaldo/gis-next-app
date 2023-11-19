@@ -1,5 +1,8 @@
+* {
+  box-sizing: border-box;
+}
 .container {
-  border: 1px solid yellow;
+  /* border: 1px solid grey; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,14 +13,20 @@
   height: 100vh;
 }
 
+.wrap {
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 20px;
+}
+
 .row {
   display: flex;
   gap: 10px;
-  border: 1px solid blue;
+  margin: 10px 0;
+  /* border: 1px solid blue; */
 }
 
 .calc-screen {
-  background-color: crimson;
   width: 100%;
   text-align: right;
   color: var(--dark-text, #FFF);

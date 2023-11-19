@@ -1,12 +1,14 @@
 'use client'
 import { useState } from 'react'
 import './calculator.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons'
 
 export default function page() {
   let [result, setResult] = useState("0");
 
   const handleClick = (e) => {
-    if (result.lengt >= 16) {
+    if (result.length >= 16) {
       setResult("Inputan terlalu besar");
       return;
     }
@@ -15,14 +17,38 @@ export default function page() {
     }
     setResult(result.concat(e.target.name));
   }
+
+  const clear = () => {
+    setResult("0")
+  }
+
+  const backspace = () => {
+    setResult(result.slice(0, result.length - 1))
+  }
+
+  const calculate = () => {
+    try {
+      result = eval(result).toString()
+      if (result.includes('.')) {
+        result=+ eval(result);
+        result = result.toFixed(4).toString();
+        setResult(result);
+      } else {
+        setResult(eval(result).toString());
+      }
+    } catch (err) {
+      setResult("Error")
+    }
+  }
   
   return (
     <div className='container'>
-      <div className="calc-screen">
+      <div className='wrap'>
+        <div className="calc-screen">
         {result}
       </div>
       <div className="row">
-        <button name='clear' onClick={handleClick}>C</button>
+        <button name='clear' onClick={clear}>C</button>
         <button name='+' onClick={handleClick}>+/-</button>
         <button name='%' onClick={handleClick}>%</button>
         <button name='/' onClick={handleClick}>/</button>
@@ -48,8 +74,11 @@ export default function page() {
       <div className="row">
         <button name='.' onClick={handleClick}>.</button>
         <button name='0' onClick={handleClick}>0</button>
-        <button name='backspace' onClick={handleClick}>[x]</button>
-        <button name='equal' onClick={handleClick}>=</button>
+        <button name='backspace' onClick={backspace}>
+          <FontAwesomeIcon icon={faDeleteLeft} />
+        </button>
+        <button name='equal' onClick={calculate}>=</button>
+      </div>
       </div>
     </div>
   )
