@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import { useState } from 'react'
 import './calculator.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
