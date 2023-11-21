@@ -1,4 +1,4 @@
-// import './chartlist.css'
+import './chartlist.css'
 
 export default function Page() {
   return (
@@ -20,21 +20,6 @@ export default function Page() {
       </form>
       <div className="list bg-[url('/img/paper-bg.jpg')] bg-repeat-y overflow-y-scroll flex flex-col gap-14 justify-between items-center">
         <ul>
-          <li>
-            <input type="checkbox" checked="true" />
-            <span>1 Kopi</span>
-            <button>&times;</button>
-          </li>
-          <li>
-            <input type="checkbox" />
-            <span>5 Gula Pasir</span>
-            <button>&times;</button>
-          </li>
-          <li>
-            <input type="checkbox" />
-            <span>3 Air Mineral</span>
-            <button>&times;</button>
-          </li>
           <li>
             <input type="checkbox" checked="true" />
             <span>1 Kopi</span>
