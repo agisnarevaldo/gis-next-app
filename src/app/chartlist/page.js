@@ -1,23 +1,11 @@
+import Form from '../components/Form';
 import './chartlist.css'
 
 export default function Page() {
   return (
-    <div className="bg-yellow-700 h-screen w-3/4 m-auto text-center text-black">
+    <div className="app bg-yellow-700 h-screen w-3/4 m-auto text-center text-black">
       <Header />
-      <form className="add-form">
-        <h3>Hari ini belanja apa kita?</h3>
-        <div>
-          <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <input type="text" placeholder="nama barang..." />
-        </div>
-        <button>Tambah</button>
-      </form>
+      <Form />
       <div className="list bg-[url('/img/paper-bg.jpg')] bg-repeat-y overflow-y-scroll flex flex-col gap-14 justify-between items-center">
         <ul>
           <li>
